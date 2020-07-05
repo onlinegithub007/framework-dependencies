@@ -1,0 +1,341 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.framework</groupId>
+	<artifactId>framework-dependencies</artifactId>
+	<version>2.1</version>
+	<packaging>pom</packaging>
+
+	<name>framework-dependencies</name>
+	<!-- https://www.cnblogs.com/gyjx2016/p/6794893.html -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<slf4j-version>1.7.7</slf4j-version>
+		<logback-version>1.1.3</logback-version>
+		<javassist-version>3.21.0-GA</javassist-version>
+		<quartz.version>2.2.0</quartz.version>
+<!-- 		<spring.version>4.3.3.RELEASE</spring.version> -->
+		<spring.version>5.1.5.RELEASE</spring.version>
+		<junit.version>4.12</junit.version>
+		<codehaus.version>2.7.8</codehaus.version>
+		<log4j.version>2.8.2</log4j.version>
+		<curator.version>2.9.1</curator.version>
+		<hiberate.jap.api.version>1.0.0.Final</hiberate.jap.api.version>
+		<kafka.version>0.10.2.0</kafka.version>
+		<kryo.version>4.0.0</kryo.version>
+		<jackson.version>2.8.4</jackson.version>
+		<jackson.jsr310.version>2.8.8</jackson.jsr310.version>
+		<kryo.serializers.version>0.41</kryo.serializers.version>
+		<!-- NIO框架版本 -->
+		<!-- <netty.version>4.1.10.Final</netty.version> -->
+		<netty.version>4.1.31.Final</netty.version>
+		<zk.version>3.4.6</zk.version>
+		<redis.client.version>2.9.0</redis.client.version>
+		<jstarcraft.versioin>1.0</jstarcraft.versioin>
+		<!-- common-rolling-file -->
+		<joda-time.version>2.9.9</joda-time.version>
+		<oframework.versioin>1.0</oframework.versioin>
+		<config.version>1.2.1</config.version>
+		<nacos-client.version>1.0.0</nacos-client.version>
+		<searchbox.version>6.3.0</searchbox.version>
+		<commons.codec>1.11</commons.codec>
+		<github.rholder.version>2.0.0</github.rholder.version>
+		<oss.version>3.7.0</oss.version>
+		<httpmime.version>4.5.6</httpmime.version>
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>1.4.197</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.rholder</groupId>
+				<artifactId>guava-retrying</artifactId>
+				<version>${github.rholder.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>5.2.3.Final</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpmime</artifactId>
+				<version>${httpmime.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.aliyun.oss</groupId>
+				<artifactId>aliyun-sdk-oss</artifactId>
+				<version>${oss.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons.codec}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.searchbox</groupId>
+				<artifactId>jest</artifactId>
+				<version>${searchbox.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>${joda-time.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.oframework</groupId>
+				<artifactId>extension</artifactId>
+				<version>${oframework.versioin}</version>
+			</dependency>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${redis.client.version}</version>
+			</dependency>
+
+			<!-- 通讯框架依赖 -->
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-all</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.javakaffee</groupId>
+				<artifactId>kryo-serializers</artifactId>
+				<version>${kryo.serializers.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.esotericsoftware</groupId>
+				<artifactId>kryo</artifactId>
+				<version>${kryo.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.1-api</artifactId>
+				<version>${hiberate.jap.api.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-recipes</artifactId>
+				<version>${curator.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.xy</groupId>
+				<artifactId>kiwi</artifactId>
+				<version>1.0</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-log4j12</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.logging.log4j</groupId>
+						<artifactId>log4j-core</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- log4j2 -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+
+			<!-- slf4j使用log4j2实现 -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>${javassist-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.adyliu</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>2.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.janino</groupId>
+				<artifactId>janino</artifactId>
+				<version>${codehaus.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.zookeeper</groupId>
+				<artifactId>zookeeper</artifactId>
+				<version>${zk.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-log4j12</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.datatype</groupId>
+				<artifactId>jackson-datatype-jsr310</artifactId>
+				<version>${jackson.jsr310.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.3.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.kafka</groupId>
+				<artifactId>kafka_2.10</artifactId>
+				<version>${kafka.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-log4j12</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>io.zipkin.brave</groupId>
+				<artifactId>brave</artifactId>
+				<version>5.0.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.zipkin.brave</groupId>
+				<artifactId>brave-spring-beans</artifactId>
+				<version>5.0.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>io.zipkin.brave</groupId>
+				<artifactId>brave-context-slf4j</artifactId>
+				<version>5.0.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.zipkin.reporter2</groupId>
+				<artifactId>zipkin-sender-okhttp3</artifactId>
+				<version>2.6.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.typesafe</groupId>
+				<artifactId>config</artifactId>
+				<version>${config.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba.nacos</groupId>
+				<artifactId>nacos-client</artifactId>
+				<version>${nacos-client.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>Nexus Release Repository</name>
+			<uniqueVersion>false</uniqueVersion>
+			<url>
+					http://nexus.sinohealth.cn/repository/maven-releases/
+				</url>
+		</repository>
+	</distributionManagement>
+</project>

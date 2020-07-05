@@ -1,0 +1,44 @@
+
+# Eclipse
+.classpath
+.project
+.settings/
+ 
+# Intellij
+.idea/
+*.iml
+*.iws
+ 
+# Mac
+.DS_Store
+ 
+# Maven
+log/
+applogs/
+logs/
+vdb1/
+target/
+app/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+ 
+# java
+*.class
+*.war
+*.ear
+ 
+# jrebel
+#rebel.xml
+ 
+# bak
+*.bak
+/bin/
+
+#svn
+.svn
+./svn*
