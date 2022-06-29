@@ -31,7 +31,7 @@
 		<!-- NIO框架版本 -->
 		<!-- <netty.version>4.1.10.Final</netty.version> -->
 		<netty.version>4.1.31.Final</netty.version>
-		<zk.version>3.4.6</zk.version>
+		<zk.version>3.4.14</zk.version>
 		<redis.client.version>2.9.0</redis.client.version>
 		<jstarcraft.versioin>1.0</jstarcraft.versioin>
 		<!-- common-rolling-file -->
